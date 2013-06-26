@@ -30,7 +30,8 @@ describe "backend" do
       :returnurl => 'http://example.org/return',
       :amount => '1000',
       :bank_id => '0001'
-    }
+    }, { 'SERVER_PORT' => '4567' }
+
     last_response.should be_ok
 
     xml = Nokogiri::Slop(last_response.body)
